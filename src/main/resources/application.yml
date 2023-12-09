@@ -1,0 +1,8 @@
+service:
+  fileConfig:
+    TfsaAccount: "src/main/resources/data/TfsaAccount.json"
+    savingsAccount: "src/main/resources/data/savingsAccount.json"
+    chequingAccount: "src/main/resources/data/chequingAccount.json"
+    accountTransactions: "src/main/resources/data/accountTransactions.json"
+    listOfAccounts: "src/main/resources/data/listOfAccounts.json"
+    incorrectFile: "src/main/resources/data/incorrectFile.json"

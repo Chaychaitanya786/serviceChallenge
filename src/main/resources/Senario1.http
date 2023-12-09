@@ -1,0 +1,73 @@
+### Successful test: check extractFile with TfsaAccount
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/TfsaAccount
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+### Successful test: check extractFile with savingsAccount
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/savingsAccount
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###  Successful test: check extractFile with chequingAccount
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/chequingAccount
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+
+### Successful test: check extractFile with accountTransactions
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/accountTransactions
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+### Successful test: check extractFile with listOfAccounts
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/listOfAccounts
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+
+### Bad Request test: check extractFile with test123- this is not configured earlier
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/test123
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 400, "Response status is not 400");
+});
+%}
+
+
+
+### Not Found test: check extractFile with incorrectFile- this is configured but file is not present
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/incorrectFile
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 404, "Response status is not 404");
+});
+%}

@@ -1,0 +1,32 @@
+### Successful test: check extractFile with TfsaAccount 1st time without x-refresh-token. Verify that method to read file is called based on logs.
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/TfsaAccount
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+
+### Successful test: check extractFile with TfsaAccount 2nd time without. Verify that method to read file is not called based on logs so the value coming from cache.
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/TfsaAccount
+Accept: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+
+### Successful test: check extractFile with TfsaAccount 2nd time without. Verify that method to read file is called based on logs so the value coming from file.Also validate log message that cache is being evicted.
+GET http://ec2-3-17-155-21.us-east-2.compute.amazonaws.com/extractFile/TfsaAccount
+Accept: application/json
+x-refresh: true
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
