@@ -6,6 +6,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+
+/**
+ * Model class representing a list of accounts along with a total.
+ * Lombok annotations are used for the automatic generation of constructors, getters, and setters.
+ */
+
 @Data
 @AllArgsConstructor
 public class ListOfAccounts {
