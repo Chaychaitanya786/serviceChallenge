@@ -18,6 +18,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * Component class responsible for accessing and caching data from files.
+ * Uses the Component annotation to indicate that this class is a Spring bean.
+ */
+
 @Component
 @Slf4j
 public class FileAccessor {
