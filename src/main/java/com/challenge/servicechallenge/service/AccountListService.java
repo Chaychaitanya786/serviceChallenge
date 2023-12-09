@@ -41,6 +41,7 @@ public class AccountListService {
         List<Account> lA = objectMapper.convertValue(listAccounts, new TypeReference<List<Account>>() {});
         return new ListOfAccounts(lA, lA.stream().map(Account::getBalance).reduce(0.0, Double::sum));
     }
+  
     /**
        * Retrieves an account by its ID.
        * @param id The ID of the account to retrieve.
